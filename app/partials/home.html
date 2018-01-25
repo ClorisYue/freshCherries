@@ -1,0 +1,32 @@
+<div class="banner">
+        <p id="webname">Fresh Cherries</p>
+        <p id="sologan">We share information about women's sanitary products<br>and care about every woman's health</p>
+
+</div>
+<section class="main-search container" id="main-search">
+    <div class="input-group">
+        <input ng-model="searchText" type="text" class="search-query form-control" placeholder="Search" />
+        <span class="input-group-btn">
+            <button class="btn btn-danger" type="button" onclick="searchProduct()">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </div>  
+</section>
+<section class="container recomended">
+	<h2>WEEKLY HOTTEST PRODUCTS</h3>
+    <div id="products" class="row">
+        <div ng-repeat="item in bestRates" class="col-md-4 col-sm-6">
+            <div class="col-md-12">
+                <a href="#/product/detail/{{item.id}}">
+                    <img alt="{{item.category}}" src="img/{{item.name}}.jpg">
+                    <h3>{{item.brand}}</h3>
+                    <p>{{item.name}}</p>
+                    <b><p style="color:red;"><p>${{item.price}}</b></p><img src="img/rate.png" alt="rate result" class="rate_img" align="middle">rate: {{item.rate}}</p>
+                    <!-- <span>{{item.name}}</span> -->
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>

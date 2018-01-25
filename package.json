@@ -1,0 +1,11 @@
+{
+  "name": "fresh-cherries",
+  "description": "A project for providing infomation about female sanitary products",
+  "devDependencies": {
+        "phantomjs" : "*",
+        "karma" : "*",
+        "karma-junit-reporter" : "*",    
+        "karma-jasmine" : "*",
+        "karma-ng-scenario" : "*"
+    }
+}

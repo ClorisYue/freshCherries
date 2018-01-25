@@ -1,0 +1,43 @@
+<!-- search result page -->
+<div id="downpage">
+    <button type="button" class="filter_menu" data-toggle="collapse" data-target="#filter-collapse">
+       <span class="fa fa-filter fa-lg"></span>
+    </button>
+</div>
+
+<form role="search" class="js-search-form search" action="#" method="post">
+  <section class="search__filters">
+    <div class="search__filters__group" id="filter-collapse">
+      <ul>
+        <li>
+          <h3>Product Categories</h3>
+            <ul class="facet-list">
+                <li ng-repeat="cat in categories">
+                    <label><input type="checkbox" ng-model="cat.on" /> {{cat.name}}</label></li>
+            </ul>            
+            <h3>Sorting Option</h3>
+            <ul class="facet-list">
+                <li><label><input type="radio" name="sort" data-ng-click="sort(1)"> Price: High to Low</label></li>
+                <li><label><input type="radio" name="sort" data-ng-click="sort(2)"> Price: Low to High</label></li>
+                <li><label><input type="radio" name="sort" data-ng-click="sort(3)"> Rate: High to Low</label></li>
+                <li><label><input type="radio" name="sort" data-ng-click="sort(4)"> Rate: Low to High</label></li>
+            </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+</form>
+
+<section class="search-results">
+  <!-- search result list -->
+  <div ng-repeat="item in searchResults = (items | filter:searchText | filter:{category:category} | orderBy:orderType:sortOrder | filter: checkboxFilter) " class="result">
+    <a href="#/product/detail/{{item.id}}">
+    	<img src="img/{{item.name}}.jpg" alt="{{item.name}}">
+    	<h3>{{item.brand}}</h3>
+    	<p>{{item.name}}</p>
+      <b><p style="color:red;"><img src="img/rate.png" alt="rate result" class="rate_img" align="middle"> rate: {{item.rate}}</p><p>${{item.price}}</b></p>
+    </a>
+  </div>
+  <div ng-if="searchResults.length==0" class="no_result_msg">Sorry, no result found. </div>
+</section>
+<div class="clearfix"></div>

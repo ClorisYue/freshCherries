@@ -1,0 +1,108 @@
+ <!-- Page Content -->
+  <div class="container product-details">
+    <!-- Heading Row -->
+    <div class="row product-details-header">
+      <div class="col-md-4">
+        <img class="rounded" src="img/{{product.name}}.jpg" alt="" style="width:100%;">
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-md-8 bg-white">
+        <h1>{{product.name}}</h1>
+        <p class='intro'>This is a template great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+        <button id="rate_button" type="button" data-toggle="popover" data-placement="bottom" class="btn btn-primary btn-lg">Rate!</button>
+        <div id="popover-content" class="hide">
+          <span class="rating">
+            <input id="rating5" type="radio" name="rating" value="5" onclick="handleRadio()">
+            <label for="rating5">5</label>
+            <input id="rating4" type="radio" name="rating" value="4" onclick="handleRadio()">
+            <label for="rating4">4</label>
+            <input id="rating3" type="radio" name="rating" value="3" onclick="handleRadio()">
+            <label for="rating3">3</label>
+            <input id="rating2" type="radio" name="rating" value="2" onclick="handleRadio()">
+            <label for="rating2">2</label>
+            <input id="rating1" type="radio" name="rating" value="1" onclick="handleRadio()">
+            <label for="rating1">1</label>
+          </span>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+  </div>
+
+  <!-- Content Row -->
+  <section class="container">
+    <div class="row table-container">
+         <table class="table">
+          <thead>
+            <tr class="text-center">
+              <th scope="col">Ingredient</th>
+              <th scope="col">Concerns</th>
+              <th scope="col">Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Malic Acid</td>
+              <td>(meets restrictions and warnings based on EWG review of company data), Irritation (skin, eyes, or lungs)</td>
+              <td class="text-center"><span class="bar-unfill"><progress value="20" max="100"></progress></span></td>
+            </tr>
+            <tr>
+              <td>Titanium Dioxide</td>
+              <td>Occupational hazards, Organ system toxicity (non-reproductive)</td>
+              <td class="text-center"><span class="bar-unfill"><progress value="90" max="100"></progress></span></td>
+            </tr>
+            <tr>
+              <td>Iron Oxides</td>
+              <td>Persistence and bioaccumulation, Enhanced skin absorption, Organ system toxicity (non-reproductive)</td>
+              <td class="text-center"><span class="bar-unfill"><progress value="50" max="100"></progress></span></td>
+            </tr>
+            <tr>
+              <td>Castor Oil</td>
+              <td>Enhanced skin absorption, Irritation (skin, eyes, or lungs), Developmental/reproductive toxicity, Data gaps</td>
+              <td class="text-center"><span class="bar-unfill"><progress value="30" max="100"></progress></span></td>
+            </tr>
+            <tr>
+              <td>Mica</td>
+              <td>Persistence and bioaccumulation, Organ system toxicity (non-reproductive)</td>
+              <td class="text-center"><span class="bar-unfill"><progress value="70" max="100"></progress></span></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  <!-- /.row -->
+  </section>
+  <!-- /.container -->
+
+  <div class="container bootstrap snippet">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="blog-comment">
+          <h3 class="text-success">Comments</h3>
+          <hr/>
+          <form>
+              <ul class="list-group">
+                  <li class="list-group-item" ng-repeat="cmt in comments"> {{ cmt }}
+                      <a href="" ng-click="post_cmt($home)"><span class="glyphicon glyphicon-trash" style="color:red; float:right;"></span></a>
+                  </li>
+              </ul>
+              <textarea class="form-control" rows="5" ng-model="cmtName" placeholder="Your Comment"></textarea>
+              <br/>
+              <button class="btn btn-success btn-md pull-right" ng-click='btn_post();'>Comment</button>
+              <br/>
+              <ul class="comments">
+                <li class="clearfix" ng-repeat="experiement in comments_json">
+                  <img src="img/{{ experiement.img }}.png" class="avatar" alt="">
+                  <div class="post-comments">
+                    <p class="meta"> {{ experiement.time }} <a href="#"> {{ experiement.name }} </a> says : </p>
+                    <p>
+                      {{ experiement.content }}
+                    </p>
+                  </div>
+                </li>
+              </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

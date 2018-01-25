@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Fresh Cherries</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body data-ng-app="myApp">
+
+	<header data-ng-controller="mCtrl0">
+	<!-- start navigation bar         -->
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+					<div class="container">
+						<!-- logo -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" aria-label="humbergar" data-toggle="collapse" data-target="#navbar-collapse">
+								<span class="fa fa-bars fa-lg"></span>
+							</button>
+							<a class="navbar-brand" href="index.html" data-ng-click="selectNav='home'">
+								<img src="img/logo0.png" alt="logo_image">
+								<img src="img/logo2.png" alt="logo_text">
+							</a>
+						</div>
+						<!-- end logo -->
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="navbar-collapse">
+							<ul class="nav navbar-nav">
+								<li><a data-ng-class="{active: selectNav == 'all'}" data-ng-href="#/product/all" data-ng-click="selectNav='all'">All</a>
+								</li>
+								<li><a data-ng-class="{active: selectNav == 'sanitaryPads'}" data-ng-href="#/product/sanitaryPads" data-ng-click="selectNav='sanitaryPads'">Sanitary Pads</a>
+								</li>
+								<li><a data-ng-class="{active: selectNav == 'tampon'}" data-ng-href="#/product/tampon" data-ng-click="selectNav='tampon'">Tampon</a>
+								</li>
+								<li><a data-ng-class="{active: selectNav == 'cup'}" data-ng-href="#/product/cup" data-ng-click="selectNav='cup'">Cup</a>
+								</li>
+								<li><a data-ng-class="{active: selectNav == 'other'}" data-ng-href="#/product/other" data-ng-click="selectNav='other'">Other</a>
+								</li>
+							</ul>
+
+						<!-- search field on navbar		 -->
+						<div id="search-input" >
+								<div class="input-group">
+									<input id="search" type="text" class="search-query form-control" placeholder="Search" aria-label="search"/>
+									<span class="input-group-btn">
+										<button class="btn btn-danger" type="button" aria-label="search_button" onclick="searchProduct('search')" data-ng-click="selectNav='all'">
+											<span class="glyphicon glyphicon-search"></span>
+										</button>
+									</span>
+								</div>
+							</div>
+						<!-- end search -->
+
+						</div>
+					</div>
+			</nav>
+			<!-- end navigation -->
+	</header>
+
+	<!-- views -->
+	<div class="content" data-ng-view></div>
+
+
+	<footer>
+		<div class="container">
+				<div class="social">
+						<a href="https://www.si.umich.edu/" class="" aria-label="twitter"><i class="fa fa-twitter fa-lg"></i></a>
+						<a href="https://www.si.umich.edu/" class="" aria-label="instagram"><i class="fa fa-instagram fa-lg"></i></a>
+						<a href="https://www.si.umich.edu/" class="" aria-label="facebook"><i class="fa fa-facebook fa-lg"></i></a>
+				</div>
+				<div class="rights">
+						<p>Copyright &copy; 2017</p>
+				</div>
+		</div>
+	</footer>
+	<!-- In production use:
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	-->
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular/angular-route.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/directives.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="js/main.js"></script>
+
+	<script>
+
+	</script>
+
+</body>
+
+</html>
